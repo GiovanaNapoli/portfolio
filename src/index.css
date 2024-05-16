@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: aptos-black;
+  src: url(./assets/fonts/aptos-black.ttf);
+}
+
+@font-face {
+  font-family: aptos-bold;
+  src: url(./assets/fonts/aptos-bold.ttf);
+}
+@font-face {
+  font-family: aptos-extrabold;
+  src: url(./assets/fonts/aptos-extrabold.ttf);
+}
+
+@font-face {
+  font-family: aptos-light;
+  src: url(./assets/fonts/aptos-light.ttf);
+}
+
+@font-face {
+  font-family: aptos-semibold;
+  src: url(./assets/fonts/aptos-semibold.ttf);
+}
+
+@font-face {
+  font-family: aptos;
+  src: url(./assets/fonts/aptos.ttf);
+}
+
+body {
+  font-family: aptos;
+  font-display: swap;
+}
