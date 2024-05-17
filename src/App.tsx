@@ -3,6 +3,7 @@ import CommonLink from "./components/CommonLink";
 import SocialBar from "./components/SocialBar";
 import { courses } from "./constants";
 import "./index.css";
+import { CoursesStatus } from "./types";
 
 function App() {
   const windowColorScheme =
@@ -14,7 +15,7 @@ function App() {
   return (
     <div className={`${darkMode ? "dark" : ""}`}>
       <div className="flex min-h-screen w-full justify-center bg-neutral-100 dark:bg-neutral-900 transition-colors duration-500 ease-in-out'">
-        <div className="flex flex-col justify-center w-8/12 md:w-97/12">
+        <div className="flex flex-col justify-center w-8/12">
           <SocialBar switchMode={() => setDarkMode((prev) => !prev)} />
           <div className="h-16" />
           <main className="mt-16">
@@ -54,18 +55,27 @@ function App() {
               className="flex flex-col md:flex-row gap-5 mt-10"
             >
               <div className="size-0 md:size-28" />
-              <div>
+              <div className="flex flex-col gap-5">
                 <h2 className="text-2xl font-aptos-black dark:text-white">
                   Cursos e formações 🎓
                 </h2>
-                <ul className="list-disc list-inside">
-                  {courses.map(({ name, link }) => (
-                    <li key={name} className="dark:text-white">
-                      {link ? (
-                        <CommonLink link={link} text={name} />
-                      ) : (
-                        <span>{name}</span>
-                      )}
+                <ul className="flex flex-wrap gap-2">
+                  {courses.map(({ name, link, school, status }) => (
+                    <li key={name} className="dark:text-white flex-grow">
+                      <a href={link} target="_blank">
+                        <div className="flex flex-col border border-zinc-300 dark:border-white rounded p-2 max-w-[300px] gap-1 shadow-sm">
+                          <span className="font-aptos-semibold">{name}</span>
+                          <span className="text-sm font-aptos-light">
+                            {school}
+                          </span>
+                          <span
+                            data-status={status === CoursesStatus.COMPLETED}
+                            className="text-sm font-aptos-bold text-orange-400 data-[status=true]:text-green-400"
+                          >
+                            {status}
+                          </span>
+                        </div>
+                      </a>
                     </li>
                   ))}
                 </ul>

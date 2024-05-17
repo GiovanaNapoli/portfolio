@@ -1,10 +1,17 @@
 import { RiTwitterLine, RiGithubLine, RiLinkedinFill } from "react-icons/ri";
-import { CoursesType } from "./types";
+import { CoursesStatus, CoursesType } from "./types";
 
 export const courses: CoursesType[] = [
   {
+    name: "Tecnologo: Analise e desenvolvimento de sistemas",
+    school: "Universidade catolica de santos",
+    status: CoursesStatus.IN_PROGRESS,
+  },
+  {
     name: "React: identificando problemas de performance com o Google Lighthouse",
+    school: "Alura",
     link: "https://cursos.alura.com.br/certificate/af7b68f4-68ed-421b-a4f9-eec4c75b5d67?lang",
+    status: CoursesStatus.COMPLETED,
   },
 ];
 
