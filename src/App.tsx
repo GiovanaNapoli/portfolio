@@ -5,7 +5,11 @@ import { courses } from "./constants";
 import "./index.css";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const windowColorScheme =
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  const [darkMode, setDarkMode] = useState(windowColorScheme);
 
   return (
     <div className={`${darkMode ? "dark" : ""} h-screen w-full`}>
