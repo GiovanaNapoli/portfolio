@@ -12,10 +12,11 @@ function App() {
   const [darkMode, setDarkMode] = useState(windowColorScheme);
 
   return (
-    <div className={`${darkMode ? "dark" : ""} h-screen w-full`}>
-      <div className="flex h-full w-full justify-center bg-neutral-100 dark:bg-neutral-900 transition-colors duration-500 ease-in-out'">
+    <div className={`${darkMode ? "dark" : ""}`}>
+      <div className="flex min-h-screen w-full justify-center bg-neutral-100 dark:bg-neutral-900 transition-colors duration-500 ease-in-out'">
         <div className="flex flex-col justify-center w-8/12 md:w-97/12">
           <SocialBar switchMode={() => setDarkMode((prev) => !prev)} />
+          <div className="h-16" />
           <main className="mt-16">
             <section
               id="about"
