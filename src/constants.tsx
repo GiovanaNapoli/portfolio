@@ -3,6 +3,11 @@ import { CoursesStatus, CoursesType } from "./types";
 
 export const courses: CoursesType[] = [
   {
+    name: "Curso técnico em Informática",
+    school: "Etec Adolpho Berezin",
+    status: CoursesStatus.COMPLETED,
+  },
+  {
     name: "Tecnologo: Analise e desenvolvimento de sistemas",
     school: "Universidade catolica de santos",
     status: CoursesStatus.IN_PROGRESS,
