@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import IconWrapper from "../IconWrapper";
+import IconWrapper from "../iconWrapper";
 import { RiMoonLine } from "react-icons/ri";
 
 interface HeaderProps {
@@ -17,9 +17,9 @@ const Header = ({ switchMode }: HeaderProps) => {
       <header className="fixed top-0 backdrop-blur inset-x-0 px-4 py-6">
         <nav className="flex flex-row justify-center items-center">
           <div className="flex flex-row items-center justify-between w-full max-w-[710px]">
-            <a className="text-lg font-aptos-black dark:text-white">
+            <Link to={"/"} className="text-lg font-aptos-black dark:text-white">
               Giovana Aparecida
-            </a>
+            </Link>
             <div className="flex flex-row justify-center items-center gap-5">
               {routes.map((route, index) => (
                 <Link
