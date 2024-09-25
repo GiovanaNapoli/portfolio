@@ -1,8 +1,8 @@
 import { useState } from "react";
-import CommonLink from "./components/CommonLink";
-import SocialBar from "./components/SocialBar";
-import { courses } from "./constants";
 import "./index.css";
+import Header from "./components/Header";
+
+import { social } from "./constants";
 
 function App() {
   const windowColorScheme =
@@ -14,74 +14,53 @@ function App() {
   return (
     <div className={`${darkMode ? "dark" : ""}`}>
       <div className="flex min-h-screen w-full justify-center bg-neutral-100 dark:bg-neutral-900 transition-colors duration-500 ease-in-out'">
-        <div className="flex flex-col justify-center w-8/12 md:w-97/12">
-          <SocialBar switchMode={() => setDarkMode((prev) => !prev)} />
+        <div className="flex flex-col w-full max-w-3xl">
+          <Header switchMode={() => setDarkMode((prev) => !prev)} />
           <div className="h-16" />
-          <main className="mt-16">
-            <section
+          <main className="grid grid-flow-row mt-16 px-8 gap-2 md:grid-flow-col">
+            <div className="flex justify-center order-1 md:order-2 md:justify-end">
+              <img
+                src="./Eu.jpg"
+                alt="Avatar"
+                className="size-36 rounded-full object-cover"
+              />
+            </div>
+            <div
               id="about"
-              className="flex flex-col gap-5 items-start md:flex-row "
+              className="flex flex-col order-2 justify-between gap-5 w-full md:order-1"
             >
-              <div>
-                <img
-                  src="./friren.jpg"
-                  alt="Avatar"
-                  className="size-28 rounded-full"
-                />
-              </div>
               <div className="flex flex-col gap-5">
-                <h1 className="text-4xl font-aptos-black dark:text-white">
-                  Olá, sou a Giovana 👋
-                </h1>
+                <div>
+                  <p className="text-lg font-aptos-semibold dark:text-white">
+                    Olá, sou a Giovana,{" "}
+                    <span className="gradient-text animate-gradient">
+                      {"<Front-end Developer />"}
+                    </span>
+                  </p>
+                </div>
                 <p className="dark:text-white">
-                  Sou desenvolvedora front-end pleno, atualmente trabalhando na{" "}
-                  <CommonLink link="https://modalgr.io/" text="ModalGR" />.
+                  Sou aquele tipo de pessoa que se diverte transformando linhas
+                  de código em interfaces incríveis. Como desenvolvedor
+                  front-end pleno, me especializei em React, React Native,
+                  Angular, JavaScript e TypeScript para criar experiências
+                  digitais que deixam os usuários com um sorriso no rosto.
                 </p>
-                <p className="dark:text-white">Anteriormente trabalhei em:</p>
-                <ul className="list-disc list-inside">
-                  <li className="dark:text-white">
-                    Estágiaria front-end na{" "}
-                    <CommonLink
-                      link="https://www.otimaideia.com.br/"
-                      text="Ótima Ideia"
-                    />
-                  </li>
-                </ul>
-              </div>
-            </section>
-            <section
-              id="courses"
-              className="flex flex-col md:flex-row gap-5 mt-10"
-            >
-              <div className="size-0 md:size-28" />
-              <div>
-                <h2 className="text-2xl font-aptos-black dark:text-white">
-                  Cursos e formações 🎓
-                </h2>
-                <ul className="list-disc list-inside">
-                  {courses.map(({ name, link }) => (
-                    <li key={name} className="dark:text-white">
-                      {link ? (
-                        <CommonLink link={link} text={name} />
-                      ) : (
-                        <span>{name}</span>
-                      )}
-                    </li>
+                <div className="flex flex-row flex-wrap gap-2">
+                  {social.map(({ Icon, name }) => (
+                    <button
+                      key={name}
+                      className="flex flex-row justify-center items-end py-1 px-2 gap-1 rounded-lg border-2 border-solid border-sky-700 font-aptos-semibold text-sky-700 hover:bg-sky-700/10 hover:border-sky-500 hover:text-sky-500 transition ease-out"
+                    >
+                      {Icon}
+                      {name}
+                    </button>
                   ))}
-                </ul>
+                </div>
               </div>
-            </section>
+            </div>
           </main>
-          <div className="flex justify-center mt-10">
-            <span className="text-sm font-aptos-semibold dark:text-white">
-              Ainda estou desenvolvendo esse site 🫣
-            </span>
-          </div>
-          <footer className="flex justify-between backdrop-blur sticky bottom-0 mt-16 dark:text-white">
-            <span className="text-sm">
-              © 2024 Giovana Aparecida Napoli da Silva.
-            </span>
-            <span>🚀</span>
+          <footer className="fixed bottom-0 left-[50%] dark:text-white">
+            <span className="text-sm">© 2024.</span>
           </footer>
         </div>
       </div>
