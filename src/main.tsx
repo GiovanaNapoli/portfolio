@@ -11,6 +11,9 @@ import {
 import { setContext } from "@apollo/client/link/context";
 import env from "./env.ts";
 
+import "./index.css";
+import "./build.css";
+
 const httpLink = createHttpLink({
   uri: "https://api.github.com/graphql",
 });

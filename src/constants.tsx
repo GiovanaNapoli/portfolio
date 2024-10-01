@@ -1,6 +1,6 @@
 import { IoLogoLinkedin } from "react-icons/io";
 import { ImGithub } from "react-icons/im";
-import { CoursesType } from "./types";
+import type { CoursesType } from "./types";
 
 export const courses: CoursesType[] = [
   {

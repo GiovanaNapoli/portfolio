@@ -1,5 +1,3 @@
-import "../../index.css";
-
 import { social as socials } from "../../constants";
 const Home = () => {
   const social = socials();

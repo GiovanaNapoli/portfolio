@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { primaryRoutes } from "./routes";
 import useTheme from "../store/theme";
 import { Container, Footer, Header } from "../components";
+import { Suspense } from "react";
 
 const AppRoutes = () => {
   const { isDarkTheme, setTheme } = useTheme();
@@ -10,15 +11,21 @@ const AppRoutes = () => {
       <Container>
         <Router>
           <Header switchMode={setTheme} />
-          <Routes>
-            {primaryRoutes.map((route) => (
-              <Route
-                key={route.id}
-                path={route.path}
-                element={route.component}
+          <Suspense
+            fallback={
+              <img
+                className="fixed size-20 bottom-[50%]"
+                src="/loading.gif"
+                loading="lazy"
               />
-            ))}
-          </Routes>
+            }
+          >
+            <Routes>
+              {primaryRoutes.map(({ Component, id, path }) => (
+                <Route key={id} path={path} element={<Component />} />
+              ))}
+            </Routes>
+          </Suspense>
           <Footer />
         </Router>
       </Container>
