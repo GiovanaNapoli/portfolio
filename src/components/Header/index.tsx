@@ -14,10 +14,10 @@ const Header = ({ switchMode }: HeaderProps) => {
 
   return (
     <IconWrapper className="fill-zinc-500 hover:fill-zinc-700 dark:fill-white dark:hover:fill-gray-400 transition-colors">
-      <header className="fixed top-0 backdrop-blur inset-x-0 px-4 py-6">
+      <header className="fixed top-0 backdrop-blur inset-x-0 px-4 py-6 print:hidden">
         <nav className="flex flex-row justify-center items-center">
           <div className="flex flex-row items-center justify-between w-full max-w-[710px]">
-            <Link to={"/"} className="text-lg font-aptos-black dark:text-white">
+            <Link to={"/"} className="text-lg font-aptos-semibold">
               Giovana Aparecida
             </Link>
             <div className="flex flex-row justify-center items-center gap-5">
@@ -25,7 +25,7 @@ const Header = ({ switchMode }: HeaderProps) => {
                 <Link
                   key={index}
                   to={route.to}
-                  className="font-aptos-semibold dark:text-white cursor-pointer"
+                  className="font-aptos-semibold cursor-pointer"
                 >
                   {route.label}
                 </Link>
