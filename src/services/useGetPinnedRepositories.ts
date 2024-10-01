@@ -12,6 +12,7 @@ const QUERY = gql`
               name
               url
               stargazerCount
+              description
             }
           }
         }
@@ -29,6 +30,8 @@ interface ResponseProps {
           id: string;
           name: string;
           url: string;
+          stargazerCount: number;
+          description: string;
         };
       }[];
     };
