@@ -1,27 +1,51 @@
-import { RiTwitterLine, RiGithubLine, RiLinkedinFill } from "react-icons/ri";
-import { CoursesType } from "./types";
+import { IoLogoLinkedin } from "react-icons/io";
+import { ImGithub } from "react-icons/im";
+import type { CoursesType } from "./types";
 
 export const courses: CoursesType[] = [
   {
-    name: "React: identificando problemas de performance com o Google Lighthouse",
-    link: "https://cursos.alura.com.br/certificate/af7b68f4-68ed-421b-a4f9-eec4c75b5d67?lang",
+    foundation: "Alura",
+    name: "Identificando Problemas de Performance com o Google Lighthouse",
+    date: "2024",
+  },
+  {
+    foundation: "Alura",
+    name: "Node.js: criando uma API Rest com Express e MongoDB",
+    date: "2024",
+  },
+  {
+    foundation: "Alura",
+    name: "React: conhecendo a biblioteca React Router",
+    date: "2023",
+  },
+  {
+    foundation: "Alura",
+    name: "React: lidando com arquivos estaticos",
+    date: "2023",
+  },
+  {
+    foundation: "Alura",
+    name: "React: escrevendo com Typescript",
+    date: "2023",
+  },
+  {
+    foundation: "Udemy",
+    name: "Crie uma Web API com Asp.NET core 3.1 + EF Core 3.1 + Docker",
+    date: "2020",
   },
 ];
 
-export const social = [
-  {
-    icon: <RiLinkedinFill size={26} />,
-    link: "https://www.linkedin.com/in/giovana-aparecida-napoli-da-silva/",
-    name: "Linkedin",
-  },
-  {
-    icon: <RiGithubLine size={26} />,
-    link: "https://github.com/GiovanaNapoli",
-    name: "Github",
-  },
-  {
-    icon: <RiTwitterLine size={26} />,
-    link: "https://twitter.com/Genova_Trakinas",
-    name: "Twitter",
-  },
-];
+export const social = (iconSize = 24) => {
+  return [
+    {
+      Icon: <IoLogoLinkedin size={iconSize} />,
+      link: "https://www.linkedin.com/in/giovana-aparecida-napoli-da-silva/",
+      name: "Linkedin",
+    },
+    {
+      Icon: <ImGithub size={iconSize} />,
+      link: "https://github.com/GiovanaNapoli",
+      name: "Github",
+    },
+  ];
+};

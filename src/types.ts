@@ -1,4 +1,5 @@
 export type CoursesType = {
+  foundation: string;
   name: string;
-  link?: string;
+  date: string;
 };
